@@ -2,8 +2,8 @@ package ru.yandex.practicum.catsgram.controller;
 
 import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
-import ru.yandex.practicum.catsgram.model.Post;
 import ru.yandex.practicum.catsgram.exception.NotFoundException;
+import ru.yandex.practicum.catsgram.model.Post;
 
 import java.time.Instant;
 import java.util.Collection;
@@ -29,9 +29,7 @@ public class PostController {
         }
         // формируем дополнительные данные
         post.setId(getNextId());
-
-        //post.setPostDate(Instant.now());
-
+        post.setPostDate(Instant.now());
         // сохраняем новую публикацию в памяти приложения
         posts.put(post.getId(), post);
         return post;

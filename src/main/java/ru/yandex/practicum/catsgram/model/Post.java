@@ -10,5 +10,5 @@ public class Post {
     Long id;
     long autthorId;
     String description;
-    Instant postdate;
+    Instant postDate;
 }
