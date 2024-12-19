@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(of = {"id"})
 public class Post {
     Long id;
-    long autthorId;
+    long authorId;
     String description;
     Instant postDate;
 }
