@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
 import ru.yandex.practicum.catsgram.exception.NotFoundException;
 import ru.yandex.practicum.catsgram.model.Post;
-import ru.yandex.practicum.catsgram.model.User;
-
+import java.util.Optional;
 import java.time.Instant;
 import java.util.Collection;
 import java.util.HashMap;
@@ -53,6 +52,10 @@ public class PostService {
             return oldPost;
         }
         throw new NotFoundException("Пост с id = " + newPost.getId() + " не найден");
+    }
+
+    public Optional<Post> getPostById(long id) {
+        return Optional.of(posts.get(id));
     }
 
     private long getNextId() {
