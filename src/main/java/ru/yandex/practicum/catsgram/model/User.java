@@ -1,8 +1,9 @@
 package ru.yandex.practicum.catsgram.model;
 
-import java.time.Instant;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.time.Instant;
 
 @Data
 @EqualsAndHashCode(of = {"email"})
