@@ -7,6 +7,8 @@ import org.springframework.util.StringUtils;
 import ru.yandex.practicum.catsgram.model.Image;
 import ru.yandex.practicum.catsgram.model.Post;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
+import ru.yandex.practicum.catsgram.exception.NotFoundException;
+import ru.yandex.practicum.catsgram.exception.ImageFileException;
 
 import java.time.Instant;
 import java.util.HashMap;
@@ -35,6 +37,32 @@ public class ImageService {
 
     public List<Image> saveImages(long postId, List<MultipartFile> files) {
         return files.stream().map(file -> saveImage(postId, file)).collect(Collectors.toList());
+    }
+
+    public ImageData getImageData(long imageId) {
+        if (!images.containsKey(imageId)) {
+            throw new NotFoundException("Изображение с id = " + imageId + " не найдено");
+        }
+        Image image = images.get(imageId);
+        // загрузка файла с диска
+        byte[] data = loadFile(image);
+
+        return new ImageData(data, image.getOriginalFileName());
+    }
+
+    private byte[] loadFile(Image image) {
+        Path path = Paths.get(image.getFilePath());
+        if (Files.exists(path)) {
+            try {
+                return Files.readAllBytes(path);
+            } catch (IOException e) {
+                throw new ImageFileException("Ошибка чтения файла.  Id: " + image.getId()
+                        + ", name: " + image.getOriginalFileName() + ", " + e);
+            }
+        } else {
+            throw new ImageFileException("Файл не найден. Id: " + image.getId()
+                    + ", name: " + image.getOriginalFileName());
+        }
     }
 
     private Image saveImage(long postId, MultipartFile file) {
