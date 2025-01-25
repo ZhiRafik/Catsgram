@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
 import ru.yandex.practicum.catsgram.exception.NotFoundException;
 import ru.yandex.practicum.catsgram.enums.SortOrder;
+import ru.yandex.practicum.catsgram.exception.ParameterNotValidException;
 import ru.yandex.practicum.catsgram.model.Post;
 
 import java.util.Optional;
@@ -26,12 +27,21 @@ public class PostService {
     }
 
     public Collection<Post> findAll(int size, Long from, String sort) {
-        if (size < 0 || from < 0 || from + size > posts.size()) {
+        if (size <= 0) {
+            throw new ParameterNotValidException("size",
+                    "Некорректный размер выборки. Размер должен быть больше нуля");
+        }
+        if (from < 0) {
+            throw new ParameterNotValidException("from",
+                    "Некорректный размер выборки. Начальный элемент поиска не может быть отрицательным");
+        }
+        if (from + size > posts.size()) {
             throw new ConditionsNotMetException("Requested range is out of bounds.");
         }
         SortOrder sortOrder = SortOrder.from(sort);
         if (sortOrder == null) {
-            throw new ConditionsNotMetException("Sort must be ascending (asc) or descending (desc).");
+            throw new ParameterNotValidException("sort",
+                    "Sort must be ascending (asc) or descending (desc).");
         }
         LinkedList<Post> foundPosts = new LinkedList<>(); // использую LinkedList, т.к. неизвестно количество постов
         // ArrayList может использовать много лишней памяти. Если использовать Stream API, чтобы сначала отсортировать,
