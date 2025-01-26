@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Map;
 import java.util.Scanner;
 
 @SpringBootApplication
