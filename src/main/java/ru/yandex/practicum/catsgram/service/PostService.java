@@ -57,7 +57,7 @@ public class PostService {
         }
         return foundPosts;
     }
-
+/*
     public Post create(Post post) {
         if (post.getDescription() == null || post.getDescription().isBlank()) {
             throw new ConditionsNotMetException("Описание не может быть пустым");
@@ -70,7 +70,7 @@ public class PostService {
         posts.put(post.getId(), post);
         return post;
     }
-
+*/
     public Post update(Post newPost) {
         if (newPost.getId() == null) {
             throw new ConditionsNotMetException("Id должен быть указан");

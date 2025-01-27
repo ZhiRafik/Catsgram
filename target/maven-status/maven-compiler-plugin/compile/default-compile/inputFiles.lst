@@ -10,6 +10,7 @@ C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\exception\NotFoundException.java
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\controller\HomeController.java
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\controller\ImageController.java
+C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\dal\UserRepository.java
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\model\Post.java
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\exception\ImageFileException.java
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\service\PostService.java
@@ -17,4 +18,5 @@ C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\controller\ErrorHandler.java
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\controller\ErrorResponse.java
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\model\Image.java
+C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\dal\mappers\UserRowMapper.java
 C:\Users\roket\IdeaProjects\Catsgram\src\main\java\ru\yandex\practicum\catsgram\service\ImageService.java
