@@ -1,1 +1,1 @@
-![ER-diagram in the project Catsgram]([https://raw.githubusercontent.com/ZhiRafik/Filmorate/f292001b6e86c3f393a00c3e214c9616c033bd19/ER-Filmorate.jpg "ER-diagram"](https://github.com/ZhiRafik/Catsgram/blob/main/Catsgram%20ER.png?raw=true))
+![ER-diagram in the project Catsgram](https://github.com/ZhiRafik/Catsgram/blob/main/Catsgram%20ER.png?raw=true)
